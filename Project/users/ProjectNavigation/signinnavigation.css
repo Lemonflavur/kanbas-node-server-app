@@ -1,0 +1,30 @@
+/******Kanbas Navigation css starts here******/
+.project-nav > li > a {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.project-nav > li {
+    padding: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.project-nav {
+    margin: 0;
+    padding: 0;
+    width: 120px;
+    position: fixed;
+    text-align: center;
+    background-color: black;
+    left: 0;
+    top: 0;
+}
+
+.project-nav .active {
+    background-color: white;
+    color: red;
+}
