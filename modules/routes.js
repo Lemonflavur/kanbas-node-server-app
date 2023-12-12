@@ -1,4 +1,4 @@
-import Database from "../Database";
+import Database from "../Database/index.js";
 function ModuleRoutes(app) {
     app.get("/api/modules", (req, res) => {
         const modules = Database.modules;
