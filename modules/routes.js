@@ -1,5 +1,6 @@
 import Database from "../Database/index.js";
 function ModuleRoutes(app) {
+
     app.get("/api/modules", (req, res) => {
         const modules = Database.modules;
         res.json(modules);
@@ -37,16 +38,18 @@ function ModuleRoutes(app) {
         Database.modules.unshift(newModule);
         res.json(newModule);
     });
-    app.put("/api/modules/:mid", (req, res) => {
-        const { mid } = req.params;
-        const moduleIndex = Database.modules.findIndex(
-            (m) => m._id === mid);
-        Database.modules[moduleIndex] = {
-            ...Database.modules[moduleIndex],
-            ...req.body
+    app.put("/api/modules/:id", (req, res) => {
+        const { id } = req.params;
+        const index = Database.modules.findIndex((module) => module._id === id);
+        if (index === -1) {
+            res.status(404).send("Module not found");
+            return;
+        }
+        Database.modules[index] = {
+            ...Database.modules[index],
+            ...req.body,
         };
-        res.sendStatus(204);
+        res.json(200);
     });
-
 }
 export default ModuleRoutes;

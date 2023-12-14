@@ -1,7 +1,7 @@
 import axios from "axios";
 const COURSES_URL = "http://localhost:4000/api/courses";
 const API_BASE = process.env.REACT_APP_API_BASE;
-const MODULES_URL = `${API_BASE}/https://kanbas-node-server-app-avyq.onrender.com/#/Kanbas/Dashboard`;
+const MODULES_URL = `${API_BASE}https://kanbas-node-server-app-cs-8a01bd919788.herokuapp.com/`;
 
 export const updateModule = async (module) => {
     const response = await axios.

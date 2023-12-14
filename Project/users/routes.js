@@ -12,7 +12,7 @@ function UserRoutes(app) {
     app.post("/api/users", createUser);
 
     const deleteUser = async (req, res) => {
-        const status = await dao.deleteUser(req.params.userId);
+        const status = await dao.deleteUser(req.params._id);
         res.json(status);
     };
 
@@ -109,7 +109,7 @@ function UserRoutes(app) {
     app.put("/api/users/:userId", updateUser);
     app.get("/api/users/updateFirstName/:id/:newFirstName", updateFirstName);
 
-    app.delete("/api/users/delete/:userId", deleteUser);
+    app.delete("/api/users/:userId", deleteUser);
     app.post("/api/users/signup", signup);
     app.post("/api/users/signin", signin);
     app.post("/api/users/signout", signout);
