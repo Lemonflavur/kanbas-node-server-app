@@ -53,12 +53,11 @@ function QuizRoutes(app) {
     };
     app.post("/api/quizzes/quizname/:quizname", findByQuizName);
 
-
     const updateQuiz = async (req, res) => {
         const { quizId } = req.params;
         const status = await dao.updateQuiz(quizId, req.body);
         currentQuiz = await dao.findByQuizId(quizId);
-        req.session['currentUser'] = currentQuiz;
+        req.session['currentQuiz'] = currentQuiz;
         res.json(status);
     };
     app.post("/api/quizzes/:quizId", updateQuiz);
