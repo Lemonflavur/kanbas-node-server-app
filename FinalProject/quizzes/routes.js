@@ -18,7 +18,8 @@ function QuizRoutes(app) {
 
 
     // ***** Similar to the Signup API ***** //
-    /** This Function creates a new quiz
+    /** This Function is just like
+     * the signup funtion creates a new quiz
      *  and takes the user to the Quiz Details Page
      */
     const createQuizInfo = async (req, res) => {
